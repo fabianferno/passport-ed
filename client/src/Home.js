@@ -35,7 +35,7 @@ function Home() {
   useEffect(() => {
     console.log("called");
     dispatch(connect());
-  }, []);
+  });
 
   return (
     <Layout>

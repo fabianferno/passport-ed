@@ -20,7 +20,9 @@ function Student() {
     dispatch(fetchData());
   };
 
+  // eslint-disable-next-line
   const getInstituteDetails = async () => {
+    // eslint-disable-next-line
     const list = await blockchain.contract.methods
       .addInstitute_Student(bid)
       .send({
@@ -32,7 +34,7 @@ function Student() {
   useEffect(() => {
     if (blockchain.account !== "" && blockchain.contract !== null) {
       dispatch(fetchData(blockchain.account));
-    }
+    } // eslint-disable-next-line
   }, [blockchain.contract, blockchain.account]);
 
   return (

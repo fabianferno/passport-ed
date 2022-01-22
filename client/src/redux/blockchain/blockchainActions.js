@@ -17,6 +17,7 @@ const connectSuccess = (payload) => {
   };
 };
 
+// eslint-disable-next-line
 const connectFailed = (payload) => {
   return {
     type: "CONNECTION_FAILED",
@@ -24,6 +25,7 @@ const connectFailed = (payload) => {
   };
 };
 
+// eslint-disable-next-line
 const updateAccountRequest = (payload) => {
   return {
     type: "UPDATE_ACCOUNT",

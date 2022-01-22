@@ -6,6 +6,7 @@ function Institute() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.instituteData);
+  // eslint-disable-next-line
   const getDetails = async () => {
     console.log(data);
   };
@@ -13,7 +14,7 @@ function Institute() {
   useEffect(() => {
     if (blockchain.account !== "" && blockchain.contract !== null) {
       dispatch(fetchData(blockchain.account));
-    }
+    } // eslint-disable-next-line
   }, [blockchain.contract, blockchain.account]);
 
   return <div>{data}</div>;
