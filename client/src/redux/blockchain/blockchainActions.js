@@ -49,30 +49,30 @@ export const connect = () => {
         );
 
         const t = await contract.methods.Identify().call();
-        const id= await contract.methods.addresstoId(accounts[0]).call();
-    var user=""
-    switch (t) {
-      case "0":
-        user="new"
-        break;
-      case "1":
-        user="patient"
-        break;
-      case "2":
-        user="doctor"
-        break;
-      default:
-        user="new"
-        break;
-    }
+        const id = await contract.methods.addresstoId(accounts[0]).call();
+        var user = "";
+        switch (t) {
+          case "0":
+            user = "new";
+            break;
+          case "1":
+            user = "patient";
+            break;
+          case "2":
+            user = "doctor";
+            break;
+          default:
+            user = "new";
+            break;
+        }
 
         dispatch(
           connectSuccess({
             account: accounts[0],
-            id:id,
+            id: id,
             contract: contract,
             web3: web3,
-            user:user
+            user: user,
           })
         );
       } catch (error) {

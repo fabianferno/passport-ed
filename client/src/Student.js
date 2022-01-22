@@ -16,13 +16,16 @@ function Student() {
     const t = await blockchain.contract.methods.addInstitute_Student(bid).send({
       from: blockchain.account,
     });
+    console.log(t);
     dispatch(fetchData());
   };
 
   const getInstituteDetails = async () => {
-    const list = await blockchain.contract.methods.addInstitute_Student(bid).send({
-      from: blockchain.account,
-    });
+    const list = await blockchain.contract.methods
+      .addInstitute_Student(bid)
+      .send({
+        from: blockchain.account,
+      });
     dispatch(fetchData());
   };
 

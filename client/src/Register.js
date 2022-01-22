@@ -1,5 +1,5 @@
-import { useContext, useState, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useState, useRef } from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 
 import Layout from "./components/Layout";
@@ -32,7 +32,7 @@ function Register() {
     var instituteName = instituteNameInputRef.current.value;
     var instituteAddress = instituteAddressInputRef.current.value;
     const receipt = await blockchain.contract.methods
-      .addInstituteInfo(instituteName,instituteAddress)
+      .addInstituteInfo(instituteName, instituteAddress)
       .send({
         from: blockchain.account,
       });
@@ -129,8 +129,7 @@ function Register() {
                     Address
                   </label>
                   <input
-                    ref={
-                      instituteAddressInputRef}
+                    ref={instituteAddressInputRef}
                     type="text"
                     className="p-3 d-flex bg-dark text-white  rounded focus-none"
                     style={{ width: "100%" }}
@@ -138,7 +137,6 @@ function Register() {
                     placeholder="ABC Colony Delhi"
                   />
                 </div>
-
               </form>
 
               <div
@@ -232,7 +230,11 @@ function Register() {
                 </div>
 
                 <div>
-                  <input type="file" name="marksheet" onChange={retrieveMarksheet} />
+                  <input
+                    type="file"
+                    name="marksheet"
+                    onChange={retrieveMarksheet}
+                  />
                 </div>
               </form>
 

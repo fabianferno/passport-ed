@@ -1,39 +1,10 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { useContext } from "react";
 
-import { Link, useLocation, useHistory } from "react-router-dom";
-
-// import { UserContext } from "../UserContext";
+import { Link, useLocation } from "react-router-dom";
 import Logo from "../assets/img/healthify.png";
-
-import { connect } from "../redux/blockchain/blockchainActions";
 
 export default function Layout(props) {
   const location = useLocation();
-  // const { contract } = useContext(UserContext);
-  // var history = useHistory();
-
-  //   const rd = async () => {
-  //     // const t= await contract.methods.check(address).call()
-
-  //     // const t = await contract.methods.Identify().call();
-  //     // console.log(t);
-  //     // switch (t) {
-  //     //   case "0":
-  //     //     history.push("/register");
-  //     //     break;
-  //     //   case "1":
-  //     //     history.push("/patient");
-  //     //     break;
-  //     //   case "2":
-  //     //     history.push("/doctor");
-  //     //     break;
-  //     //   default:
-  //     //     history.push("/");
-  //     //     break;
-  //     // }
-  //     dispatch(connect());
-  //   };
 
   function Header() {
     return (
