@@ -97,7 +97,7 @@ function Register() {
         {formToggle ? (
           <div className="text-dark container" style={{ paddingTop: "150px" }}>
             <div className="mb-5 d-flex justify-content-between  align-items-center">
-              <h1 className="fw-bold text-white ">Create a institute</h1>
+              <h1 className="fw-bold  ">Create an Institute</h1>
               <div className="form-check form-switch mb-3">
                 <button
                   onClick={() => setFormToggle(!formToggle)}
@@ -141,16 +141,16 @@ function Register() {
 
               <div
                 onClick={() => createinstitute()}
-                className="mt-5 btn d-block btn-lg text-dark fw-bold btn-primary p-3"
+                className="mt-5 btn d-block btn-lg fw-bold btn-primary p-3"
               >
-                Create institute and Proceed ✅
+                Create Institute and Proceed ✅
               </div>
             </section>
           </div>
         ) : (
           <div className="text-dark container" style={{ paddingTop: "150px" }}>
             <div className="mb-5 d-flex justify-content-between align-items-center">
-              <h1 className="fw-bold text-white">Create a student</h1>
+              <h1 className="fw-bold  ">Create a student</h1>
               <div className="form-check form-switch mb-3">
                 <button
                   onClick={() => setFormToggle(!formToggle)}
@@ -226,12 +226,18 @@ function Register() {
                 </div>
 
                 <div>
-                  <input type="file" name="aadhar" onChange={retrieveAadhar} />
+                  <input
+                    type="file"
+                    className="form-control my-3 bg-dark text-white"
+                    name="aadhar"
+                    onChange={retrieveAadhar}
+                  />
                 </div>
 
                 <div>
                   <input
                     type="file"
+                    className="form-control my-3 bg-dark text-white"
                     name="marksheet"
                     onChange={retrieveMarksheet}
                   />
@@ -240,7 +246,7 @@ function Register() {
 
               <div
                 onClick={() => createstudent()}
-                className="mt-5 btn d-block btn-lg text-dark fw-bold btn-primary p-3"
+                className="mt-5 btn d-block btn-lg fw-bold btn-primary p-3"
               >
                 <div>
                   Your uploaded aadhar image

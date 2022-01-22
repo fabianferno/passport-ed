@@ -1,7 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../assets/img/healthify.png";
 
 export default function Layout(props) {
   const location = useLocation();
@@ -27,19 +26,10 @@ export default function Layout(props) {
             <Link
               to="/"
               style={{ fontSize: "2em" }}
-              className="navbar-brand fw-bold text-primary me-md-5  me-3"
+              className="navbar-brand fw-bold text-white me-md-5  me-3"
             >
-              <img height="50px" src={Logo} alt="" srcset="" />
               <span style={{ marginLeft: "15px" }}>passport-ed</span>
             </Link>
-            {/* {location.pathname === "/" && (
-            //   <div
-            //     onClick={() => rd()}
-            //     className="p-3 btn btn-outline-primary fw-bold btn-lg "
-            //   >
-            //     Get Started
-            //   </div>
-            )} */}
           </div>
         </div>
       </motion.div>

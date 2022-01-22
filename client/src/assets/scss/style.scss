@@ -1,7 +1,8 @@
 @use "sass:map";
 /* make the customizations */
 $theme-colors: ("info": #ffbc44,
-  "primary": #00EEC9,
+  "success": #f7ffc9,
+  "primary": #bd005e,
   "dark": #2a2a2a,
   "secondary": #a7a7a7,
   "black": #0f0f0f,
@@ -21,8 +22,8 @@ $theme-colors: ("info": #ffbc44,
 
 html,
 body {
-  background-color: map.get($theme-colors, "black");
-  color: map.get($theme-colors, "light");
+  background-color: map.get($theme-colors, "success");
+  color: map.get($theme-colors, "dark");
   font-family: 'Montserrat', sans-serif;
 }
 
