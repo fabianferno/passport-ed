@@ -19,6 +19,7 @@ function Register() {
   const [marksheetUrl, setMarksheetUrl] = useState(
     "/marksheet-placeholder.jpg"
   );
+  const [profilePicUrl, setProfilePicUrl] = useState("/avatar.png");
   // const [urlArr, setUrlArr] = useState([]);
   let history = useHistory();
 
@@ -66,6 +67,17 @@ function Register() {
     }
   }
 
+  async function retrieveProfilePic(e) {
+    const file = e.target.files[0];
+    try {
+      const added = await client.add(file);
+      const url = `https://ipfs.infura.io/ipfs/${added.path}`;
+      setProfilePicUrl(url);
+    } catch (error) {
+      console.log("Error uploading file: ", error);
+    }
+  }
+
   async function createstudent() {
     var studentName = studentNameInputRef.current.value;
     var studentAddress = studentAddressInputRef.current.value;
@@ -74,6 +86,7 @@ function Register() {
 
     console.log(aadharUrl);
     console.log(marksheetUrl);
+    console.log(profilePicUrl);
 
     const receipt = await blockchain.contract.methods
       .addStudentInfo(
@@ -82,7 +95,8 @@ function Register() {
         studentPhone,
         studentAge,
         aadharUrl,
-        marksheetUrl
+        marksheetUrl,
+        profilePicUrl
       )
       .send({
         from: blockchain.account,
@@ -232,6 +246,16 @@ function Register() {
 
                 <div className="d-flex justify-content-start">
                   <div className="me-md-4">
+                    <div>Upload Profile Pic</div>
+                    <input
+                      type="file"
+                      className="form-control my-3 bg-dark text-white"
+                      name="profilePic"
+                      placeholder="Upload Profile Pic"
+                      onChange={retrieveProfilePic}
+                    />
+                  </div>
+                  <div className="me-md-4">
                     <div>Upload Aadhar Card</div>
                     <input
                       type="file"
@@ -257,6 +281,16 @@ function Register() {
               <hr />
 
               <div className="d-flex justify-content-between mt-3">
+                <div>
+                  Your uploaded Profile Picture
+                  <div className="card card-body my-3 me-md-3">
+                    <img
+                      src={profilePicUrl}
+                      style={{ height: "300px" }}
+                      alt=""
+                    />
+                  </div>
+                </div>
                 <div>
                   Your uploaded aadhar image
                   <div className="card card-body my-3 me-md-3">
