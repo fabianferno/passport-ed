@@ -52,6 +52,12 @@ function Home() {
                 <h1 style={{ fontSize: "5rem" }} className="fw-bold text-dark">
                   passport-ed
                 </h1>
+                <h6 className="w-75">
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
+                  amet nam odit rerum voluptates expedita tempora doloribus
+                  dicta eos inventore fuga, corrupti incidunt placeat magni
+                  doloremque quibusdam nobis iste tenetur.
+                </h6>
                 <button
                   className="btn btn-lg btn-primary fw-bold my-3"
                   onClick={() => rd()}

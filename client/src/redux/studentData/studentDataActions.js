@@ -56,9 +56,17 @@ export const fetchData = () => {
         name: studentData[0],
         address: studentData[1],
         phone: studentData[2],
-        univId: studentData[3],
-        aadhar: studentData[4],
-        marksheet: studentData[5],
+        age: studentData[3],
+        univData: studentData[4].map(
+          async (univId) =>
+            await store
+              .getState()
+              .blockchain.contract.methods.getInstituteInfo_Students(univId)
+              .call()
+        ),
+        aadhar: studentData[5],
+        marksheet: studentData[6],
+        profilePic: studentData[7],
       };
 
       instituteData = {

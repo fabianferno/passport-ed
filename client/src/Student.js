@@ -10,7 +10,6 @@ function Student() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const profileData = useSelector((state) => state.studentData);
-  const univData = useSelector((state) => state.instituteData);
 
   // const getDetails = async () => {
   //   console.log(profileData);
@@ -56,7 +55,11 @@ function Student() {
               <div className="d-md-flex d-block">
                 <div className="m-4 col-md-4 d-flex align-items-center justify-content-center">
                   <img
-                    src="/avatar.png"
+                    src={
+                      profileData.info.profilePic === null
+                        ? "/avatar.png"
+                        : profileData.info.profilePic
+                    }
                     style={{ borderRadius: "100%" }}
                     className="img-fluid "
                     alt=""
@@ -86,7 +89,8 @@ function Student() {
                     <div>
                       <h6>Universities you've applied</h6>
                       <h3 className="fw-bold text-primary">
-                        {profileData.info.univId}
+                        {JSON.stringify(profileData.info.univData)}
+                        {console.log(profileData.info)}
                       </h3>
                     </div>
                   </div>
