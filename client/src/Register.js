@@ -13,9 +13,9 @@ function Register() {
   const blockchain = useSelector((state) => state.blockchain);
   console.log(blockchain);
   const [formToggle, setFormToggle] = useState(false);
-  // const [aadharFile, setAadharFile] = useState(null);
+  // const [ID-ProofFile, setID-ProofFile] = useState(null);
   // const [marksheetFile, setMarksheetFile] = useState(null);
-  const [aadharUrl, setAadharUrl] = useState("/aadhar-placeholder.jpg");
+  const [ID-ProofUrl, setID-ProofUrl] = useState("/ID-Proof-placeholder.jpg");
   const [marksheetUrl, setMarksheetUrl] = useState(
     "/marksheet-placeholder.jpg"
   );
@@ -56,12 +56,12 @@ function Register() {
     }
   }
 
-  async function retrieveAadhar(e) {
+  async function retrieveID-Proof(e) {
     const file = e.target.files[0];
     try {
       const added = await client.add(file);
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      setAadharUrl(url);
+      setID-ProofUrl(url);
     } catch (error) {
       console.log("Error uploading file: ", error);
     }
@@ -84,7 +84,7 @@ function Register() {
     var studentPhone = studentPhoneInputRef.current.value;
     var studentAge = studentAgeInputRef.current.value;
 
-    console.log(aadharUrl);
+    console.log(ID-ProofUrl);
     console.log(marksheetUrl);
     console.log(profilePicUrl);
 
@@ -94,7 +94,7 @@ function Register() {
         studentAddress,
         studentPhone,
         studentAge,
-        aadharUrl,
+        ID-ProofUrl,
         marksheetUrl,
         profilePicUrl
       )
@@ -137,7 +137,7 @@ function Register() {
                     type="text"
                     className="p-3 d-flex bg-dark  text-white  rounded focus-none"
                     id="inputName"
-                    placeholder="student Name - Eg. Ram Kumar"
+                    placeholder="College Name - Eg. XYZ Institute "
                   />
                 </div>
 
@@ -151,7 +151,7 @@ function Register() {
                     className="p-3 d-flex bg-dark  text-white  rounded focus-none"
                     style={{ width: "100%" }}
                     id="inputAddress"
-                    placeholder="ABC Colony Delhi"
+                    placeholder="ABC College Delhi"
                   />
                 </div>
               </form>
@@ -256,13 +256,13 @@ function Register() {
                     />
                   </div>
                   <div className="me-md-4">
-                    <div>Upload Aadhar Card</div>
+                    <div>Upload ID-Proof Card</div>
                     <input
                       type="file"
                       className="form-control my-3 bg-dark text-white"
-                      name="aadhar"
-                      placeholder="Upload Aadhar"
-                      onChange={retrieveAadhar}
+                      name="ID-Proof"
+                      placeholder="Upload ID-Proof"
+                      onChange={retrieveID-Proof}
                     />
                   </div>
 
@@ -292,9 +292,9 @@ function Register() {
                   </div>
                 </div>
                 <div>
-                  Your uploaded aadhar image
+                  Your uploaded ID-Proof image
                   <div className="card card-body my-3 me-md-3">
-                    <img src={aadharUrl} style={{ height: "300px" }} alt="" />
+                    <img src={ID-ProofUrl} style={{ height: "300px" }} alt="" />
                   </div>
                 </div>
                 <div>

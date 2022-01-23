@@ -60,7 +60,7 @@ export const fetchData = () => {
         phone: studentData[2],
         age: studentData[3],
         univData,
-        aadhar: studentData[5],
+        ID-Proof: studentData[5],
         marksheet: studentData[6],
         profilePic: studentData[7],
       };

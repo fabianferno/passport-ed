@@ -16,7 +16,7 @@ Students need to repload the same documents on various portals again and again f
 
 
 
-Currently confidential documents like aadhar, bonafide certificates, gradesheets go into third-party providers who store the documents. This increases the chances of personal data becoming vulnerable to privacy intrusion. We aim to provide a platform for students to upload their IDs, bonafides, aadhar and gradesheets on the blockchain via the decentralized IPFS technology. 
+Currently confidential documents like ID-Proof, bonafide certificates, gradesheets go into third-party providers who store the documents. This increases the chances of personal data becoming vulnerable to privacy intrusion. We aim to provide a platform for students to upload their IDs, bonafides, ID-Proof and gradesheets on the blockchain via the decentralized IPFS technology. 
 
 ![image](https://user-images.githubusercontent.com/57835412/150677395-dfd19296-bd93-4d37-a285-8a42005643b5.png)
 

@@ -114,13 +114,13 @@ function Student() {
 
             <div className="d-flex justify-content-start align-items-center">
               <a
-                href={profileData.info.aadhar}
+                href={profileData.info.ID-Proof}
                 target="_blank"
                 rel="noreferrer"
                 className="p-3 bg-black mx-3"
               >
                 <img
-                  src={profileData.info.aadhar}
+                  src={profileData.info.ID-Proof}
                   alt=""
                   style={{ height: "400px" }}
                   srcSet=""

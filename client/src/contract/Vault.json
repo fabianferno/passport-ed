@@ -108,7 +108,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "_aadhar",
+				"name": "_ID-Proof",
 				"type": "string"
 			},
 			{
