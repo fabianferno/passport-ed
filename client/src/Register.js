@@ -15,8 +15,10 @@ function Register() {
   const [formToggle, setFormToggle] = useState(false);
   // const [aadharFile, setAadharFile] = useState(null);
   // const [marksheetFile, setMarksheetFile] = useState(null);
-  const [aadharUrl, setAadharUrl] = useState(null);
-  const [marksheetUrl, setMarksheetUrl] = useState(null);
+  const [aadharUrl, setAadharUrl] = useState("/aadhar-placeholder.jpg");
+  const [marksheetUrl, setMarksheetUrl] = useState(
+    "/marksheet-placeholder.jpg"
+  );
   // const [urlArr, setUrlArr] = useState([]);
   let history = useHistory();
 
@@ -93,7 +95,7 @@ function Register() {
 
   return (
     <Layout>
-      <section className="pt-5">
+      <section className="pt-2">
         {formToggle ? (
           <div className="text-dark container" style={{ paddingTop: "150px" }}>
             <div className="mb-5 d-flex justify-content-between  align-items-center">
@@ -104,34 +106,35 @@ function Register() {
                   className="btn btn-outline-primary"
                   type="button"
                 >
-                  {formToggle ? "Create student" : "Create institute"}
+                  {formToggle
+                    ? "Create a Student account"
+                    : "Create an Institute instead?"}
                 </button>
               </div>
             </div>
             <section className="pb-5 mb-5">
               <form>
                 <div className="form-group   my-4">
-                  <label htmlFor="inputName" className="text-secondary">
+                  <label htmlFor="inputName" className="text-dark">
                     Name
                   </label>
                   <input
                     ref={instituteNameInputRef}
                     type="text"
-                    className="p-3 d-flex bg-dark text-white  rounded focus-none"
-                    style={{ width: "100%" }}
+                    className="p-3 d-flex bg-dark  text-white  rounded focus-none"
                     id="inputName"
                     placeholder="student Name - Eg. Ram Kumar"
                   />
                 </div>
 
                 <div className="form-group   my-4">
-                  <label htmlFor="inputName" className="text-secondary">
+                  <label htmlFor="inputName" className="text-dark">
                     Address
                   </label>
                   <input
                     ref={instituteAddressInputRef}
                     type="text"
-                    className="p-3 d-flex bg-dark text-white  rounded focus-none"
+                    className="p-3 d-flex bg-dark  text-white  rounded focus-none"
                     style={{ width: "100%" }}
                     id="inputAddress"
                     placeholder="ABC Colony Delhi"
@@ -143,49 +146,67 @@ function Register() {
                 onClick={() => createinstitute()}
                 className="mt-5 btn d-block btn-lg fw-bold btn-primary p-3"
               >
-                Create Institute and Proceed ✅
+                Create Institute & Proceed ✅
               </div>
             </section>
           </div>
         ) : (
           <div className="text-dark container" style={{ paddingTop: "150px" }}>
             <div className="mb-5 d-flex justify-content-between align-items-center">
-              <h1 className="fw-bold  ">Create a student</h1>
+              <h1 className="fw-bold">Register a Student</h1>
               <div className="form-check form-switch mb-3">
                 <button
                   onClick={() => setFormToggle(!formToggle)}
                   className="btn btn-outline-primary"
                   type="button"
                 >
-                  {formToggle ? "Create student" : "Create institute"}
+                  {formToggle
+                    ? "Create a Student account"
+                    : "Create an Institute instead?"}
                 </button>
               </div>
             </div>
             <section className="pb-5 mb-5">
               <form>
                 <div className="form-group  my-4">
-                  <label htmlFor="inputName" className="text-secondary">
+                  <label htmlFor="inputName" className="text-dark">
                     Name
                   </label>
                   <input
                     ref={studentNameInputRef}
                     type="text"
-                    className="p-3 d-flex bg-dark text-white  rounded focus-none"
                     style={{ width: "100%" }}
+                    className="p-3 d-flex bg-dark col-md-6 text-white  rounded focus-none"
                     id="inputName"
                     placeholder="student Name - Eg. Ram Kumar"
                   />
                 </div>
 
                 <div className="form-group  my-4">
-                  <label htmlFor="inputAddress" className="text-secondary">
+                  <label htmlFor="inputPhone" className="text-dark">
+                    Age
+                  </label>
+                  <input
+                    ref={studentAgeInputRef}
+                    type="number"
+                    className={
+                      "p-3 d-flex bg-dark  text-white  rounded focus-none"
+                    }
+                    style={{ width: "100%" }}
+                    id="inputAge"
+                    placeholder="Age -19"
+                  />
+                </div>
+
+                <div className="form-group  my-4">
+                  <label htmlFor="inputAddress" className="text-dark">
                     Address
                   </label>
                   <input
                     ref={studentAddressInputRef}
                     type="text"
                     className={
-                      "p-3 d-flex bg-dark text-white  rounded focus-none"
+                      "p-3 d-flex bg-dark  text-white rounded focus-none"
                     }
                     style={{ width: "100%" }}
                     id="inputAddress"
@@ -194,14 +215,14 @@ function Register() {
                 </div>
 
                 <div className="form-group  my-4">
-                  <label htmlFor="inputPhone" className="text-secondary">
+                  <label htmlFor="inputPhone" className="text-dark">
                     Phone
                   </label>
                   <input
                     ref={studentPhoneInputRef}
                     type="number"
                     className={
-                      "p-3 d-flex bg-dark text-white  rounded focus-none"
+                      "p-3 d-flex bg-dark  text-white  rounded focus-none"
                     }
                     style={{ width: "100%" }}
                     id="inputPhone"
@@ -209,54 +230,56 @@ function Register() {
                   />
                 </div>
 
-                <div className="form-group  my-4">
-                  <label htmlFor="inputPhone" className="text-secondary">
-                    Age
-                  </label>
-                  <input
-                    ref={studentAgeInputRef}
-                    type="number"
-                    className={
-                      "p-3 d-flex bg-dark text-white  rounded focus-none"
-                    }
-                    style={{ width: "100%" }}
-                    id="inputAge"
-                    placeholder="Age -19"
-                  />
-                </div>
+                <div className="d-flex justify-content-start">
+                  <div className="me-md-4">
+                    <div>Upload Aadhar Card</div>
+                    <input
+                      type="file"
+                      className="form-control my-3 bg-dark text-white"
+                      name="aadhar"
+                      placeholder="Upload Aadhar"
+                      onChange={retrieveAadhar}
+                    />
+                  </div>
 
-                <div>
-                  <input
-                    type="file"
-                    className="form-control my-3 bg-dark text-white"
-                    name="aadhar"
-                    onChange={retrieveAadhar}
-                  />
-                </div>
-
-                <div>
-                  <input
-                    type="file"
-                    className="form-control my-3 bg-dark text-white"
-                    name="marksheet"
-                    onChange={retrieveMarksheet}
-                  />
+                  <div className="me-md-4">
+                    <div>Upload Marksheet</div>
+                    <input
+                      type="file"
+                      className="form-control my-3 bg-dark text-white"
+                      name="marksheet"
+                      onChange={retrieveMarksheet}
+                    />
+                  </div>
                 </div>
               </form>
+
+              <hr />
+
+              <div className="d-flex justify-content-between mt-3">
+                <div>
+                  Your uploaded aadhar image
+                  <div className="card card-body my-3 me-md-3">
+                    <img src={aadharUrl} style={{ height: "300px" }} alt="" />
+                  </div>
+                </div>
+                <div>
+                  Your uploaded marksheet image
+                  <div className="card card-body my-3 me-md-3">
+                    <img
+                      src={marksheetUrl}
+                      style={{ height: "300px" }}
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
 
               <div
                 onClick={() => createstudent()}
                 className="mt-5 btn d-block btn-lg fw-bold btn-primary p-3"
               >
-                <div>
-                  Your uploaded aadhar image
-                  <img src={aadharUrl} alt="" />
-                </div>
-                <div>
-                  Your uploaded marksheet image
-                  <img src={marksheetUrl} alt="" />
-                </div>
-                Create student and Proceed ✅
+                Create Student & Proceed ✅
               </div>
             </section>
           </div>

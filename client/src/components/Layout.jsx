@@ -18,7 +18,7 @@ export default function Layout(props) {
             paddingTop: "60px",
             paddingBottom: "30px",
           }}
-          className={`fixed-top shadow px-md-4 px-3 d-flex justify-content-between  align-items-center pl-md-5 pl-4 ${
+          className={`fixed-top shadow px-md-4 px-3 d-flex justify-content-between align-items-center pl-md-5 pl-4 ${
             location.pathname === "/register" ? "bg-dark" : "bg-black"
           } `}
         >
@@ -28,6 +28,7 @@ export default function Layout(props) {
               style={{ fontSize: "2em" }}
               className="navbar-brand fw-bold text-white me-md-5  me-3"
             >
+              <img src="/logo192.png" height="60px" alt="" srcset="" />
               <span style={{ marginLeft: "15px" }}>passport-ed</span>
             </Link>
           </div>

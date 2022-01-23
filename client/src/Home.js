@@ -39,18 +39,26 @@ function Home() {
 
   return (
     <Layout>
-      <div className="mt-5 d-flex justify-content-center align-items-center vh-100">
-        <div>
-          <h1 style={{ fontSize: "6rem" }} className="fw-bold text-dark">
-            passport-ed
-          </h1>
-          <div className="d-flex align-items-center justify-content-center">
-            <button
-              className="btn w-100 btn-lg btn-outline-dark my-3"
-              onClick={() => rd()}
-            >
-              Get Started
-            </button>
+      <div className="container">
+        <div
+          style={{ minHeight: "65vh" }}
+          className="d-flex justify-content-center align-items-center"
+        >
+          <div>
+            <div className="d-flex align-items-center justify-content-center">
+              <img src="/logo192.png" alt="" srcset="" />
+              <div className="ms-3 d-flex flex-column align-items-start justify-content-center">
+                <h1 style={{ fontSize: "6rem" }} className="fw-bold text-dark">
+                  passport-ed
+                </h1>
+                <button
+                  className="btn btn-lg btn-outline-dark my-3"
+                  onClick={() => rd()}
+                >
+                  Get Started
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
