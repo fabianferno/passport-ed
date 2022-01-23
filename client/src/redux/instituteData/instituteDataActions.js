@@ -27,13 +27,13 @@ export const fetchData = () => {
     try {
       console.log(store.getState().blockchain.contract);
 
-      let res = await store
+      let instituteData = await store
         .getState()
         .blockchain.contract.methods.getStudentInfo()
         .call();
 
-      console.log(res);
-      dispatch(fetchDataSuccess(res));
+      console.log(instituteData);
+      dispatch(fetchDataSuccess(instituteData));
     } catch (err) {
       console.log(err);
       dispatch(fetchDataFailed("Could not load data from contract."));

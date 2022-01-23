@@ -27,29 +27,47 @@ export const fetchData = () => {
     try {
       console.log(store.getState().blockchain.contract);
 
-      let res = await store
+      let studentData = await store
         .getState()
         .blockchain.contract.methods.getStudentInfo()
         .call();
-      
-        let n=await store
+
+      let n = await store
         .getState()
-        .blockchain.contract.methods.institutecount().call();
+        .blockchain.contract.methods.institutecount()
+        .call();
 
-        console.log(n)
-        let res2={}
+      // console.log(n);
+      let instituteData = {};
 
-        for(var i=0;i<n;i++)
-        {
-          let det=await store
+      for (var i = 0; i < n; i++) {
+        let det = await store
           .getState()
-          .blockchain.contract.methods.getInstituteInfo_Students(1000+i).call();
-          res2[1000+i]=det;
-        }
+          .blockchain.contract.methods.getInstituteInfo_Students(1000 + i)
+          .call();
+        instituteData[1000 + i] = det;
+      }
 
-      console.log(res);
-      console.log(res2);
-      dispatch(fetchDataSuccess({res,res2}));
+      console.log(studentData);
+      console.log(instituteData);
+
+      studentData = {
+        loading: false,
+        name: studentData[0],
+        address: studentData[1],
+        phone: studentData[2],
+        univId: studentData[3],
+        aadhar: studentData[4],
+        marksheet: studentData[5],
+      };
+
+      instituteData = {
+        loading: false,
+        name: instituteData[0],
+        address: instituteData[1],
+      };
+
+      dispatch(fetchDataSuccess({ studentData, instituteData }));
     } catch (err) {
       console.log(err);
       dispatch(fetchDataFailed("Could not load data from contract."));

@@ -28,7 +28,7 @@ export default function Layout(props) {
               style={{ fontSize: "2em" }}
               className="navbar-brand fw-bold text-white me-md-5  me-3"
             >
-              <img src="/logo192.png" height="60px" alt="" srcset="" />
+              <img src="/logo192.png" height="60px" alt="" srcSet="" />
               <span style={{ marginLeft: "15px" }}>passport-ed</span>
             </Link>
           </div>
@@ -53,13 +53,14 @@ export default function Layout(props) {
           }
         >
           {props.children}
-        </motion.div>
-        <div className="text-center pb-3">
-          <div className="p-3">
-            <div className="fw-bold">Built with ❤️ by Star Labs Devs</div>
-            <div className="p">@fabianferno @surbhitagrawal</div>
+
+          <div className="text-center py-3">
+            <div className="p-3">
+              <div className="fw-bold">Built with ❤️ by Star Labs Devs</div>
+              <div className="p">@fabianferno @surbhitagrawal</div>
+            </div>
           </div>
-        </div>
+        </motion.div>
       </AnimatePresence>
     </div>
   );

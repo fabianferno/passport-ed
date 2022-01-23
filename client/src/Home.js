@@ -47,7 +47,7 @@ function Home() {
         >
           <div>
             <div className="d-md-flex align-items-center justify-content-center">
-              <img src="/logo192.png" alt="" srcset="" />
+              <img src="/logo192.png" alt="" srcSet="" />
               <div className="ms-3 pb-3 d-md-flex flex-md-column align-items-start justify-content-center">
                 <h1 style={{ fontSize: "5rem" }} className="fw-bold text-dark">
                   passport-ed
@@ -67,7 +67,7 @@ function Home() {
 
         <div className="d-md-flex align-items-center justify-content-center my-5 container">
           <div className="col-md-5 mx-md-5">
-            <img src="passport-ed.svg" className="img-fluid" alt="" srcset="" />
+            <img src="passport-ed.svg" className="img-fluid" alt="" srcSet="" />
           </div>
           <div className="col-md-7 mt-5 mt-md-0">
             <h1 className="fw-bold">Decentralized DMS</h1>
