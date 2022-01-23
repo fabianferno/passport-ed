@@ -51,28 +51,18 @@ export const fetchData = () => {
       console.log(studentData);
       console.log(instituteData);
 
+      var univData = studentData[4].map((univId) => instituteData[univId]);
+
       studentData = {
         loading: false,
         name: studentData[0],
         address: studentData[1],
         phone: studentData[2],
         age: studentData[3],
-        univData: studentData[4].map(
-          async (univId) =>
-            await store
-              .getState()
-              .blockchain.contract.methods.getInstituteInfo_Students(univId)
-              .call()
-        ),
+        univData,
         aadhar: studentData[5],
         marksheet: studentData[6],
         profilePic: studentData[7],
-      };
-
-      instituteData = {
-        loading: false,
-        name: instituteData[0],
-        address: instituteData[1],
       };
 
       dispatch(fetchDataSuccess({ studentData, instituteData }));
