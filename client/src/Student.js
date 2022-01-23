@@ -85,7 +85,9 @@ function Student() {
                     </div>
                     <div>
                       <h6>Universities you've applied</h6>
-                      <h3 className="fw-bold text-primary"></h3>
+                      <h3 className="fw-bold text-primary">
+                        {profileData.info.univId}
+                      </h3>
                     </div>
                   </div>
                 </div>
