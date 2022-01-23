@@ -66,7 +66,6 @@ export const fetchData = () => {
       };
 
       instituteData = {
-        loading: false,
         ...instituteData,
       };
 
