@@ -31,6 +31,10 @@ export default function Layout(props) {
               <img src="/logo192.png" height="60px" alt="" srcSet="" />
               <span style={{ marginLeft: "15px" }}>passport-ed</span>
             </Link>
+
+            <h5 className="text-white p-3">
+              Hassle Free DMS on the Blockchain
+            </h5>
           </div>
         </div>
       </motion.div>

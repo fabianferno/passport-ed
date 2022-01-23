@@ -39,10 +39,10 @@ function Home() {
 
   return (
     <Layout>
-      <div className="d-md-none d-block" style={{ marginTop: "100px" }}></div>
+      <div className="d-md-none d-block" style={{ paddingTop: "200px" }}></div>
       <div className="container">
         <div
-          style={{ minHeight: "50vh" }}
+          style={{ minHeight: "60vh" }}
           className="d-flex justify-content-center align-items-center"
         >
           <div>
@@ -70,7 +70,7 @@ function Home() {
           Powered by the <span className="fw-bold">Celo Network</span>
         </h5>
 
-        <div className="d-md-flex align-items-center justify-content-center my-5 container">
+        <div className="d-md-flex align-items-center vh-100 justify-content-center my-5 container">
           <div className="col-md-5 mx-md-5">
             <img
               src="https://media0.giphy.com/media/H2yMYCqdjVncIUuKPM/giphy.gif?cid=ecf05e47s7swwfwem06b07dm7xnr8g8h6ym6p1gxhevppre0&rid=giphy.gif&ct=s"
@@ -91,6 +91,7 @@ function Home() {
             </p>
           </div>
         </div>
+
         <div className="d-md-flex align-items-center justify-content-center my-5 container">
           <div className="col-md-7 mt-5 mt-md-0">
             <h1 className="fw-bold w-75">Decentralized DMS</h1>
