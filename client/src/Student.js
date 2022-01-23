@@ -112,6 +112,10 @@ function Student() {
               </div>
             </div>
 
+            <hr />
+
+            <h6 className="text-start pb-3">Available Documents</h6>
+
             <div className="d-flex justify-content-start align-items-center">
               <a
                 href={profileData.info.aadhar}
@@ -145,19 +149,44 @@ function Student() {
 
         <hr />
 
+        <h6 className="text-start pb-3">Available Institutes</h6>
+
         {!availableUnivs.info ? (
           <div className="d-flex justify-content-center align-items-center">
             <div className="spinner-border text-primary" role="status"></div>
           </div>
         ) : (
           <div className="container text-white">
-            <pre className="m-3 rounded card card-body bg-black">
-              {JSON.stringify(availableUnivs.info.instituteData, 2, 2)}
-            </pre>
+            <div className="d-md-flex">
+              {Object.keys(availableUnivs.info.instituteData).map(
+                (item, index) => (
+                  <div
+                    key={index}
+                    className="m-3 rounded card card-body bg-black"
+                  >
+                    <p className="text-secondary p">Institute Id: #{item}</p>
+                    <h3>
+                      {
+                        Object.values(availableUnivs.info.instituteData)[
+                          index
+                        ][0]
+                      }
+                    </h3>
+                    <h5>
+                      {
+                        Object.values(availableUnivs.info.instituteData)[
+                          index
+                        ][1]
+                      }
+                    </h5>
+                  </div>
+                )
+              )}
+            </div>
           </div>
         )}
 
-        <h5 className="pb-3 mt-5">Add Institute with ID Number</h5>
+        <h6 className="pb-3 mt-5">Add Institute to User with ID</h6>
         <div className="input-group-append">
           <input
             type="number"
