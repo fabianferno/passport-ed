@@ -39,26 +39,44 @@ function Home() {
 
   return (
     <Layout>
+      <div className="d-md-none d-block" style={{ marginTop: "100px" }}></div>
       <div className="container">
         <div
-          style={{ minHeight: "65vh" }}
+          style={{ minHeight: "50vh" }}
           className="d-flex justify-content-center align-items-center"
         >
           <div>
-            <div className="d-flex align-items-center justify-content-center">
+            <div className="d-md-flex align-items-center justify-content-center">
               <img src="/logo192.png" alt="" srcset="" />
-              <div className="ms-3 d-flex flex-column align-items-start justify-content-center">
-                <h1 style={{ fontSize: "6rem" }} className="fw-bold text-dark">
+              <div className="ms-3 pb-3 d-md-flex flex-md-column align-items-start justify-content-center">
+                <h1 style={{ fontSize: "5rem" }} className="fw-bold text-dark">
                   passport-ed
                 </h1>
                 <button
-                  className="btn btn-lg btn-outline-dark my-3"
+                  className="btn btn-lg btn-primary fw-bold my-3"
                   onClick={() => rd()}
                 >
                   Get Started
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <div className="d-md-flex align-items-center justify-content-center my-5 container">
+          <div className="col-md-5 mx-md-5">
+            <img src="passport-ed.svg" className="img-fluid" alt="" srcset="" />
+          </div>
+          <div className="col-md-7 mt-5 mt-md-0">
+            <h1 className="fw-bold">Decentralized DMS</h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et
+              sapiente sunt molestiae aspernatur magnam obcaecati distinctio
+              voluptas possimus eaque delectus omnis nesciunt, animi, eligendi
+              quod labore quisquam necessitatibus? Delectus?
+            </p>
           </div>
         </div>
       </div>
