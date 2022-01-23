@@ -108,7 +108,7 @@
 			},
 			{
 				"internalType": "string",
-				"name": "_ID-Proof",
+				"name": "_ID_Proof",
 				"type": "string"
 			},
 			{

@@ -13,9 +13,9 @@ function Register() {
   const blockchain = useSelector((state) => state.blockchain);
   console.log(blockchain);
   const [formToggle, setFormToggle] = useState(false);
-  // const [ID-ProofFile, setID-ProofFile] = useState(null);
+  // const [ID_ProofFile, setID_ProofFile] = useState(null);
   // const [marksheetFile, setMarksheetFile] = useState(null);
-  const [ID-ProofUrl, setID-ProofUrl] = useState("/ID-Proof-placeholder.jpg");
+  const [ID_ProofUrl, setID_ProofUrl] = useState("/aadhar-placeholder.jpg");
   const [marksheetUrl, setMarksheetUrl] = useState(
     "/marksheet-placeholder.jpg"
   );
@@ -56,12 +56,12 @@ function Register() {
     }
   }
 
-  async function retrieveID-Proof(e) {
+  async function retrieveID_Proof(e) {
     const file = e.target.files[0];
     try {
       const added = await client.add(file);
       const url = `https://ipfs.infura.io/ipfs/${added.path}`;
-      setID-ProofUrl(url);
+      setID_ProofUrl(url);
     } catch (error) {
       console.log("Error uploading file: ", error);
     }
@@ -84,7 +84,7 @@ function Register() {
     var studentPhone = studentPhoneInputRef.current.value;
     var studentAge = studentAgeInputRef.current.value;
 
-    console.log(ID-ProofUrl);
+    console.log(ID_ProofUrl);
     console.log(marksheetUrl);
     console.log(profilePicUrl);
 
@@ -94,7 +94,7 @@ function Register() {
         studentAddress,
         studentPhone,
         studentAge,
-        ID-ProofUrl,
+        ID_ProofUrl,
         marksheetUrl,
         profilePicUrl
       )
@@ -256,13 +256,13 @@ function Register() {
                     />
                   </div>
                   <div className="me-md-4">
-                    <div>Upload ID-Proof Card</div>
+                    <div>Upload ID_Proof Card</div>
                     <input
                       type="file"
                       className="form-control my-3 bg-dark text-white"
-                      name="ID-Proof"
-                      placeholder="Upload ID-Proof"
-                      onChange={retrieveID-Proof}
+                      name="ID_Proof"
+                      placeholder="Upload ID_Proof"
+                      onChange={retrieveID_Proof}
                     />
                   </div>
 
@@ -292,9 +292,9 @@ function Register() {
                   </div>
                 </div>
                 <div>
-                  Your uploaded ID-Proof image
+                  Your uploaded ID_Proof image
                   <div className="card card-body my-3 me-md-3">
-                    <img src={ID-ProofUrl} style={{ height: "300px" }} alt="" />
+                    <img src={ID_ProofUrl} style={{ height: "300px" }} alt="" />
                   </div>
                 </div>
                 <div>
