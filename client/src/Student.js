@@ -89,8 +89,21 @@ function Student() {
                     <div>
                       <h6>Universities you've applied</h6>
                       <h3 className="fw-bold text-primary">
-                        {JSON.stringify(profileData.info.univData)}
-                        {console.log(profileData.info)}
+                        {profileData.info.univData === null ? (
+                          <div>
+                            <h3>No university applied yet</h3>
+                          </div>
+                        ) : (
+                          <div>
+                            {profileData.info.univData.map((item, index) => (
+                              <div key={index}>
+                                <h3 className="fw-bold">
+                                  {index + 1}. {item[0]}, {item[1]}
+                                </h3>
+                              </div>
+                            ))}
+                          </div>
+                        )}
                       </h3>
                     </div>
                   </div>
