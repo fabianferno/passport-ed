@@ -45,7 +45,8 @@ export const connect = () => {
         kit.defaultAccount = accounts[0];
         const contract = new kit.web3.eth.Contract(
           test2,
-          "0x3f02D2c276994a4224147d4eb12A1C0126a0Ce66"
+          "0x36586c6293CEd2640445181d3Eac23dBd550Bed5"
+          // "0x3f02D2c276994a4224147d4eb12A1C0126a0Ce66"
           // "0x5B7CE6d7a9457094c80Ab50C3aEFE937780e9F14"
           // "0x9800Edb37E120f463f205CB98821f4b1fcd5E04c"
         );
