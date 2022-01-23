@@ -60,7 +60,7 @@ export default function Layout(props) {
 
           <div className="text-center py-3">
             <div className="p-3">
-              <div className="fw-bold">Built with ❤️ by Star Labs Devs</div>
+              {/* <div className="fw-bold">Built with ❤️ by Star Labs Devs</div> */}
               <div className="p">@fabianferno @surbhitagrawal</div>
             </div>
           </div>
