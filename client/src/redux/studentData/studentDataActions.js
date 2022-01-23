@@ -65,6 +65,11 @@ export const fetchData = () => {
         profilePic: studentData[7],
       };
 
+      instituteData = {
+        loading: false,
+        ...instituteData,
+      };
+
       dispatch(fetchDataSuccess({ studentData, instituteData }));
     } catch (err) {
       console.log(err);

@@ -52,12 +52,7 @@ function Home() {
                 <h1 style={{ fontSize: "5rem" }} className="fw-bold text-dark">
                   passport-ed
                 </h1>
-                <h6 className="w-75">
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
-                  amet nam odit rerum voluptates expedita tempora doloribus
-                  dicta eos inventore fuga, corrupti incidunt placeat magni
-                  doloremque quibusdam nobis iste tenetur.
-                </h6>
+                <h6 className="w-75">Admission process made hassle free.</h6>
                 <button
                   className="btn btn-lg btn-primary fw-bold my-3"
                   onClick={() => rd()}
@@ -71,18 +66,42 @@ function Home() {
 
         <hr />
 
+        <h5 className="py-5 text-end my-5">
+          Powered by the <span className="fw-bold">Celo Network</span>
+        </h5>
+
         <div className="d-md-flex align-items-center justify-content-center my-5 container">
           <div className="col-md-5 mx-md-5">
-            <img src="passport-ed.svg" className="img-fluid" alt="" srcSet="" />
+            <img
+              src="https://media0.giphy.com/media/H2yMYCqdjVncIUuKPM/giphy.gif?cid=ecf05e47s7swwfwem06b07dm7xnr8g8h6ym6p1gxhevppre0&rid=giphy.gif&ct=s"
+              className="img-fluid"
+              alt=""
+              srcSet=""
+            />
           </div>
           <div className="col-md-7 mt-5 mt-md-0">
-            <h1 className="fw-bold">Decentralized DMS</h1>
+            <h1 className="fw-bold w-75">
+              Addmission process made hassle free.
+            </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque et
-              sapiente sunt molestiae aspernatur magnam obcaecati distinctio
-              voluptas possimus eaque delectus omnis nesciunt, animi, eligendi
-              quod labore quisquam necessitatibus? Delectus?
+              "passport-ed" aims to be the passport for your educational details
+              and document management system. "passport-ed" aims to provide a
+              platform for students to upload their ID proofs and marksheets to
+              apply for addmision to various universities.
             </p>
+          </div>
+        </div>
+        <div className="d-md-flex align-items-center justify-content-center my-5 container">
+          <div className="col-md-7 mt-5 mt-md-0">
+            <h1 className="fw-bold w-75">Decentralized DMS</h1>
+            <p>
+              Only the institutes authorised by the student can access their
+              data and documents. The platform is completely decentralised and
+              built on Celo network.
+            </p>
+          </div>
+          <div className="col-md-5 mx-md-5">
+            <img src="passport-ed.svg" className="img-fluid" alt="" srcSet="" />
           </div>
         </div>
       </div>

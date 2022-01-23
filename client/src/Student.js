@@ -10,6 +10,7 @@ function Student() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
   const profileData = useSelector((state) => state.studentData);
+  const availableUnivs = useSelector((state) => state.instituteData);
 
   // const getDetails = async () => {
   //   console.log(profileData);
@@ -38,7 +39,7 @@ function Student() {
     if (blockchain.account !== "" && blockchain.contract !== null) {
       dispatch(fetchData(blockchain.account));
     }
-    console.log(`profileData: ${JSON.stringify(profileData)}`);
+
     // eslint-disable-next-line
   }, [blockchain.contract, blockchain.account]);
 
@@ -143,6 +144,18 @@ function Student() {
         )}
 
         <hr />
+
+        {!availableUnivs.info ? (
+          <div className="d-flex justify-content-center align-items-center">
+            <div className="spinner-border text-primary" role="status"></div>
+          </div>
+        ) : (
+          <div className="container text-white">
+            <pre className="m-3 rounded card card-body bg-black">
+              {JSON.stringify(availableUnivs.info.instituteData, 2, 2)}
+            </pre>
+          </div>
+        )}
 
         <h5 className="pb-3 mt-5">Add Institute with ID Number</h5>
         <div className="input-group-append">
