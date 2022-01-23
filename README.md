@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/57835412/150677339-a34659ce-133e-4cdd-b7aa-fe1527b5c38b.png)
 
 
-# passport-ed
+# **passport-ed**
 
 ### Store your university certifcates on the blockchain.
 passport-ed: The Passport for your educational details and document
